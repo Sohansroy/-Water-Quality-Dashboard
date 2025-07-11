@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaCheck</title>
+    <link rel="image/png" href="assetss/icon.png">
+    <link rel="icon" type="image/png" href="assetss/icon.png">
+    <link rel="stylesheet" href="static/style.css">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="AquaCheck.">
+    <meta property="og:description" content="AquaCheck: A Smart Water Quality Monitoring App">
+    <meta property="og:image" content="https://aqua-check.vercel.app/assetss/logo_square.png">
+    <meta property="og:url" content="https://aqua-check.vercel.app/">
+    <meta property="og:type" content="website">
+
+    <!-- Firebase SDK -->
+    <!-- Firebase App (the core Firebase SDK) -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+
+    <!-- Firebase Realtime Database -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+    <header>
+        <img src="assetss/logo_transparent.png" alt="AquaCheck" id="logo">
+        <div id="dateTimeContainer">
+            <div id="timeContainer">
+                <p id="timeText">--:--:--</p>
+                <p id="ampmText">--</p>
+            </div>
+            <p id="dateText">---,--- --</p>
+        </div>
+    </header>
+    <main>
+        <div id="conditionsContainer">
+            <span id="conditionsText">--</span>
+        </div>
+        
+        <div id="GaugeContainer">
+            <div id="temperatureGauge" class="middle-panel-cards">
+                <div class="backCircle"></div>
+                <div class="progressBar" id="temperatureProgressBar"></div>
+                <div class="frontCircle"></div>
+                <h2 class="gauge-text" >
+                    <span class="gauge-value" id="temperatureText" style="color: red;">--</span>°C
+                </h2>
+                <p style="color: #a7a7a7; position:relative;">Temperature</p>
+            </div>
+
+            <div id="pHGauge" class="middle-panel-cards">
+                <div class="backCircle"></div>
+                <div class="progressBar" id="pHProgressBar"></div>
+                <div class="frontCircle"></div>
+                <h2 class="gauge-text" >
+                    <span class="gauge-value" id="pHText" style="color: red;">--</span>
+                </h2>
+                <p style="color: #a7a7a7; position:relative;">pH</p>
+            </div>
+
+            <div id="turbidityGauge" class="middle-panel-cards">
+                <div class="backCircle"></div>
+                <div class="progressBar" id="turbidityProgressBar"></div>
+                <div class="frontCircle"></div>
+                <h2 class="gauge-text" >
+                    <span class="gauge-value" id="turbidityText" style="color: red;">--</span>NTU
+                </h2>
+                <p style="color: #a7a7a7; position:relative;">Turbidity</p>
+            </div>
+        </div>
+
+        <div id="ChartContainer">
+            <div class="chart-card">
+                <p class="chart-label">Temperature (°C)</p>
+                <canvas id="temperatureChart"></canvas>
+            </div>
+            <div class="chart-card">
+                <p class="chart-label">pH Level</p>
+                <canvas id="pHChart"></canvas>
+            </div>
+            <div class="chart-card">
+                <p class="chart-label">Turbidity (NTU)</p>
+                <canvas id="turbidityChart"></canvas>
+            </div>
+        </div>
+
+    </main>
+</body>
+    <script src="/public/static/script.js"></script>
+    <script src="static/script.js"></script>
+</html>
