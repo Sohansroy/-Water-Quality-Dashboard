@@ -1,4 +1,4 @@
-# -Water-Quality-Dashboard
+# Aquacheck (Water-Quality-Dashboard)
 
 This project is a real-time water quality monitoring dashboard that collects data from an ESP32-based prototype. It measures **temperature**, **pH**, and **turbidity** of water using appropriate sensors, and displays the values live on a web dashboard.
 
